@@ -1,0 +1,7 @@
+_email/
+*.eml
+.claude/
+Thumbs.db
+.DS_Store
+zalozit-github-repo.sh
+*.zip

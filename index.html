@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Návrhy svatebního webu · Marie a Ondřej</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f9f8f4">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f9f8f4' stroke='%23393131' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' text-anchor='middle' fill='%23393131'%3EM%26amp;O%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #f9f8f4; --ink: #393131; --muted: #776e6a; --line: #e6e0d7; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 300 16px/1.7 'Montserrat', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1240px, 100% - 32px); margin-inline: auto; }
+    header { text-align: center; padding: clamp(48px, 8vw, 96px) 0 clamp(32px, 5vw, 56px); position: relative; overflow: hidden; }
+    header .flowers { position: absolute; width: 300px; right: -60px; top: -40px; opacity: .35; pointer-events: none; }
+    header .names { width: min(300px, 70vw); height: auto; margin: 0 auto 18px; }
+    .eyebrow { font-size: .74rem; letter-spacing: .3em; text-transform: uppercase; font-weight: 500; color: var(--muted); margin: 0 0 10px; }
+    h1 { font-weight: 400; font-size: clamp(1.4rem, 3vw, 2rem); margin: 0 0 10px; }
+    header p.lead { max-width: 56ch; margin: 0 auto; color: var(--muted); }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.5vw, 32px); padding-bottom: 72px; }
+    .card { display: flex; flex-direction: column; background: #fff; border-radius: 20px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 24px 60px -40px rgba(57,49,49,.55); transition: transform .3s, box-shadow .3s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 34px 70px -40px rgba(57,49,49,.7); }
+    .preview { position: relative; aspect-ratio: 10 / 13; overflow: hidden; background: var(--line); border-bottom: 1px solid var(--line); }
+    .preview iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 1664px; border: 0; transform-origin: 0 0; pointer-events: none; }
+    .info { padding: 22px 24px 26px; display: grid; gap: 10px; flex: 1; }
+    .num { font-size: .7rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
+    .info h2 { margin: 0; font-weight: 500; font-size: 1.25rem; }
+    .info p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .swatches { display: flex; gap: 6px; margin-top: 4px; }
+    .swatches i { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
+    .open { margin-top: auto; padding-top: 10px; font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+    .open::after { content: '→'; transition: transform .25s; letter-spacing: 0; }
+    .card:hover .open::after { transform: translateX(5px); }
+    footer { text-align: center; padding: 0 0 56px; color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 960px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } header .flowers { width: 200px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="flowers" src="assets/img/kvetiny-s.webp" alt="" aria-hidden="true">
+    <div class="wrap">
+      <img class="names" src="assets/svg/marie-a-ondrej.svg" alt="Marie a Ondřej">
+      <p class="eyebrow">Návrhy svatebního webu</p>
+      <h1>Který se vám líbí nejvíc?</h1>
+      <p class="lead">Všechny tři mají stejný obsah – úvod, potvrzení účasti a časté dotazy. Liší se jen vzhledem. Klikněte na návrh a projděte si ho, klidně i na mobilu. Formulář si můžete vyzkoušet, zatím nic neodesílá.</p>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <a class="card" href="navrh-1/index.html">
+      <div class="preview"><iframe src="navrh-1/index.html?nahled" scrolling="no" title="Náhled návrhu 1" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+      <div class="info">
+        <span class="num">Návrh 1</span>
+        <h2>Luční kvítí</h2>
+        <p>Navazuje přímo na tištěné oznámení – krémový papír, jemná písmena a fotky v obloukových rámech. Klidný a romantický.</p>
+        <div class="swatches"><i style="background:#f9f8f4"></i><i style="background:#393131"></i><i style="background:#7f8f66"></i><i style="background:#d48b8f"></i><i style="background:#9a8fc9"></i></div>
+        <span class="open">Otevřít návrh</span>
+      </div>
+    </a>
+    <a class="card" href="navrh-2/index.html">
+      <div class="preview"><iframe src="navrh-2/index.html?nahled" scrolling="no" title="Náhled návrhu 2" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+      <div class="info">
+        <span class="num">Návrh 2</span>
+        <h2>Statek</h2>
+        <p>Vaše fotky v hlavní roli, teplé cihlové a terakotové barvy a motiv kruhu z fotky „skrz tunel". Hřejivý a osobní.</p>
+        <div class="swatches"><i style="background:#f4ede4"></i><i style="background:#2f2420"></i><i style="background:#b4532a"></i><i style="background:#5f6b3d"></i></div>
+        <span class="open">Otevřít návrh</span>
+      </div>
+    </a>
+    <a class="card" href="navrh-3/index.html">
+      <div class="preview"><iframe src="navrh-3/index.html?nahled" scrolling="no" title="Náhled návrhu 3" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
+      <div class="info">
+        <span class="num">Návrh 3</span>
+        <h2>Modrobílý pruh</h2>
+        <p>Moderní „časopisecký" styl v námořnické modré a krémové – inspirovaný Mariiným pruhovaným svetrem. Čistý a elegantní.</p>
+        <div class="swatches"><i style="background:#f3eee4"></i><i style="background:#1f2a44"></i><i style="background:#c9a86e"></i><i style="background:repeating-linear-gradient(180deg,#1f2a44 0 4px,#f6f1e7 4px 8px)"></i></div>
+        <span class="open">Otevřít návrh</span>
+      </div>
+    </a>
+  </main>
+
+  <footer>Napište nám číslo návrhu, který vyhrál – a případně co byste na něm chtěli změnit.</footer>
+
+  <script>
+    // zmenšení živých náhledů na šířku karty
+    const fit = () => document.querySelectorAll('.preview').forEach((p) => {
+      const f = p.querySelector('iframe');
+      f.style.transform = `scale(${p.clientWidth / 1280})`;
+    });
+    addEventListener('resize', fit); fit();
+  </script>
+</body>
+</html>
