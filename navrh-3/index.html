@@ -171,6 +171,17 @@
 
     /* ---------- FAQ ---------- */
     .faq { padding: clamp(72px, 10vw, 130px) 0; }
+
+    /* bledá kytice jako na pozvánce */
+    .bouquet { position: absolute; z-index: 0; height: auto; opacity: .3; pointer-events: none; user-select: none; }
+    .hero__text, .faq { position: relative; overflow: hidden; }
+    .hero__text > :not(.bouquet), .faq > .wrap { position: relative; z-index: 1; }
+    .hero__bouquet { width: min(520px, 40vw); right: -70px; bottom: -40px; }
+    .faq__bouquet { width: min(440px, 32vw); left: -80px; bottom: 0; transform: scaleX(-1); }
+    @media (max-width: 960px) {
+      .hero__bouquet { width: 78vw; right: -24vw; bottom: -30px; }
+      .faq__bouquet { display: none; }
+    }
     .faq__in { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(40px, 7vw, 110px); }
     .faq__side { position: sticky; top: 100px; align-self: start; }
     .faq__side .script-title { height: clamp(80px, 10vw, 115px); width: auto; margin-left: -10px; }
@@ -242,6 +253,7 @@
   <!-- ============ ÚVOD ============ -->
   <header class="hero" id="uvod">
     <div class="hero__text">
+      <img class="bouquet hero__bouquet" src="../assets/img/kvetiny.webp" alt="" aria-hidden="true">
       <p class="hero__kicker label reveal">Svatba 2027</p>
       <h1 class="reveal d1"><img class="hero__names" src="../assets/svg/marie-a-ondrej-navy.svg" alt="Marie a Ondřej"></h1>
       <p class="hero__lead reveal d1">Budeme se brát a moc rádi vás u toho uvidíme.</p>
@@ -372,6 +384,7 @@
 
     <!-- ============ DOTAZY ============ -->
     <section class="faq" id="dotazy">
+      <img class="bouquet faq__bouquet" src="../assets/img/kvetiny.webp" alt="" aria-hidden="true" loading="lazy">
       <div class="wrap faq__in">
         <div class="faq__side reveal">
           <h2><img class="script-title" src="../assets/svg/dotazy-navy.svg" alt="Časté dotazy"></h2>

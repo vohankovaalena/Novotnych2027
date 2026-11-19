@@ -130,9 +130,16 @@
     }
     .card__flowers {
       position: absolute; width: clamp(130px, 22vw, 210px); top: -60px; right: -40px;
-      transform: rotate(14deg); opacity: .9; pointer-events: none;
+      transform: rotate(14deg); opacity: .5; pointer-events: none;
     }
-    .card__flowers--b { top: auto; right: auto; bottom: -50px; left: -46px; transform: rotate(-160deg) scaleX(-1); width: clamp(100px, 16vw, 150px); opacity: .75; }
+    .card__flowers--b { top: auto; right: auto; bottom: -50px; left: -46px; transform: rotate(-160deg) scaleX(-1); width: clamp(100px, 16vw, 150px); opacity: .4; }
+
+    /* bledá kytice jako na pozvánce */
+    .bouquet { position: absolute; z-index: 0; height: auto; opacity: .3; pointer-events: none; user-select: none; }
+    .hero__bouquet { width: min(700px, 54vw); left: 30%; bottom: -14%; }
+    .faq__bouquet { width: min(500px, 40vw); right: -90px; bottom: 0; }
+    .faq { position: relative; overflow: hidden; }
+    .faq > .wrap { position: relative; z-index: 1; }
     .rsvp__head { text-align: center; margin-bottom: 36px; }
     .rsvp__head p { margin: 0; }
 
@@ -222,6 +229,8 @@
       .arch:nth-child(3) { display: none; }
       .card__flowers { right: -14px; top: -54px; }
       .card__flowers--b { display: none; }
+      .hero__bouquet { width: 100vw; left: auto; right: -30vw; bottom: -4%; }
+      .faq__bouquet { width: 70vw; right: -26vw; bottom: 0; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -238,6 +247,7 @@
 
   <!-- ============ ÚVOD ============ -->
   <header class="hero" id="uvod">
+    <img class="bouquet hero__bouquet" src="../assets/img/kvetiny.webp" alt="" aria-hidden="true">
     <div class="wrap hero__inner">
       <div>
       <h1 class="reveal"><img class="hero__names" src="../assets/svg/marie-a-ondrej.svg" alt="Marie a Ondřej"></h1>
@@ -339,6 +349,7 @@
 
     <!-- ============ DOTAZY ============ -->
     <section class="faq" id="dotazy">
+      <img class="bouquet faq__bouquet" src="../assets/img/kvetiny.webp" alt="" aria-hidden="true" loading="lazy">
       <div class="wrap">
         <div class="faq__head reveal">
           <h2 style="margin:0"><img class="script-title" src="../assets/svg/dotazy.svg" alt="Časté dotazy"></h2>
