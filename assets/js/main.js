@@ -1,4 +1,4 @@
-/* Svatební web Marie & Ondřej – sdílený skript pro všechny návrhy
+/* Svatební web Marie & Ondřej – skript webu
  * - RSVP formulář přes Web3Forms (https://web3forms.com)
  * - odpočet do svatby
  * - jemné animace při scrollu
@@ -14,7 +14,6 @@
    * ------------------------------------------------------------------ */
   const WEB3FORMS_ACCESS_KEY = 'VLOZTE_SEM_WEB3FORMS_ACCESS_KEY';
   const WEDDING_DATE = '2027-05-29T11:30:00+02:00';
-  const MAX_GUESTS = 6;
 
   const DEMO = !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(WEB3FORMS_ACCESS_KEY);
 
@@ -80,38 +79,7 @@
   const success = document.querySelector('[data-rsvp-success]');
   const errorBox = form.querySelector('[data-rsvp-error]');
   const attendingBlock = form.querySelector('[data-attending]');
-  const countSelect = form.querySelector('[name="pocet_osob"]');
-  const guestWrap = form.querySelector('[data-guest-names]');
   const submitBtn = form.querySelector('[type="submit"]');
-
-  if (countSelect && !countSelect.options.length) {
-    for (let i = 1; i <= MAX_GUESTS; i++) {
-      const o = document.createElement('option');
-      o.value = String(i);
-      o.textContent = i === 1 ? '1 – jen já' : `${i} ${plural(i, 'osoba', 'osoby', 'osob')}`;
-      countSelect.appendChild(o);
-    }
-  }
-
-  const renderGuests = () => {
-    if (!guestWrap || !countSelect) return;
-    const n = parseInt(countSelect.value, 10) || 1;
-    const existing = [...guestWrap.querySelectorAll('input')].map((i) => i.value);
-    guestWrap.innerHTML = '';
-    for (let i = 2; i <= n; i++) {
-      const id = `f-host-${i}`;
-      const field = document.createElement('div');
-      field.className = 'field field--guest';
-      field.innerHTML =
-        `<label for="${id}">Jméno a příjmení – ${i}. host</label>` +
-        `<input id="${id}" name="host_${i}" type="text" autocomplete="off" required>`;
-      field.querySelector('input').value = existing[i - 2] || '';
-      guestWrap.appendChild(field);
-    }
-    guestWrap.hidden = n < 2;
-  };
-  countSelect && countSelect.addEventListener('change', renderGuests);
-  renderGuests();
 
   const setAttending = () => {
     const val = (form.querySelector('[name="ucast"]:checked') || {}).value;
@@ -134,8 +102,6 @@
 
     const name = (fd.get('jmeno') || '').toString().trim();
     const attending = (fd.get('ucast') || '').toString();
-    const guests = [];
-    for (const [k, v] of fd.entries()) if (k.startsWith('host_') && v.toString().trim()) guests.push(v.toString().trim());
 
     const payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
@@ -145,9 +111,8 @@
       'Přijde?': attending,
     };
     if (attending !== 'Bohužel nemůžu') {
-      payload['Počet osob'] = fd.get('pocet_osob') || '1';
-      if (guests.length) payload['Další hosté'] = guests.join(', ');
-      payload['Odvoz'] = fd.get('odvoz') || 'neuvedeno';
+      payload['Odvoz na obřad (z ubytování)'] = fd.get('odvoz_tam') || 'neuvedeno';
+      payload['Odvoz na ubytování (po oslavě)'] = fd.get('odvoz_zpet') || 'neuvedeno';
     }
     payload['Vzkaz'] = (fd.get('vzkaz') || '').toString().trim() || '—';
 
