@@ -47,7 +47,8 @@
       font-size: .78rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 400; color: var(--muted);
     }
     .script-title { width: auto; height: clamp(84px, 14vw, 130px); margin: 0 auto 8px; }
-    .script-title--dorazis { height: clamp(104px, 17vw, 160px); }
+    .script-title--dorazis { height: clamp(124px, 21vw, 195px); }
+    .script-title--dotazy { height: clamp(104px, 17vw, 160px); }
 
     /* ---------- Navigace ---------- */
     .nav {
@@ -151,7 +152,8 @@
       font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; padding: 0; margin-bottom: 8px;
     }
     .req { color: var(--rose); }
-    .opt { text-transform: none; letter-spacing: 0; font-weight: 300; color: var(--muted); }
+    .opt { text-transform: none; letter-spacing: 0; font-size: .92rem; font-weight: 400; line-height: 1.5; color: #5a514d; }
+    legend .opt { display: block; margin-top: 6px; }
     input[type="text"], select, textarea {
       width: 100%; font: 400 1rem/1.4 'Montserrat', sans-serif; color: var(--ink);
       background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
@@ -219,7 +221,7 @@
     }
     .faq details[open] summary::after { transform: rotate(45deg); }
     .faq summary:hover { color: var(--sage); }
-    .faq .a { padding: 0 4px 24px; color: var(--muted); max-width: 64ch; }
+    .faq .a { padding: 0 4px 24px; color: #5a514d; font-weight: 400; max-width: 64ch; }
     .faq .a p { margin: 0 0 10px; }
     .faq .a em { color: var(--ink); }
     @supports (interpolate-size: allow-keywords) {
@@ -251,7 +253,7 @@
       /* mobil: kytice zůstává dole, jen výrazně ztlumená kvůli čitelnosti */
       .hero__bouquet { width: 100vw; top: auto; right: -30vw; bottom: -4%; transform: none; opacity: .12; filter: saturate(.5); }
       .rsvp__bouquet { width: 90vw; left: -42vw; top: 0; translate: none; opacity: .12; }
-      .faq__bouquet { width: 70vw; right: -26vw; bottom: 0; opacity: .12; }
+      .faq__bouquet { width: 62vw; right: -36vw; bottom: 0; opacity: .1; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -313,7 +315,7 @@
           <div class="rsvp__head">
             <h2 style="margin:0"><img class="script-title script-title--dorazis" src="assets/svg/dorazis.svg" alt="Dorazíš?"></h2>
             <p class="eyebrow">Potvrzení účasti</p>
-            <p style="margin-top:14px">Prosíme, potvrďte svou účast do <strong style="font-weight:500">28.&nbsp;2.&nbsp;2027</strong>.</p>
+            <p style="margin-top:14px">Prosíme, potvrď svou účast do <strong style="font-weight:500">28.&nbsp;2.&nbsp;2027</strong>.</p>
           </div>
 
           <form id="rsvp-form" class="rsvp-form">
@@ -325,16 +327,16 @@
             </div>
 
             <fieldset class="field">
-              <legend>Přijdete? <span class="req">*</span></legend>
+              <legend>Přijedeš? <span class="req">*</span></legend>
               <div class="choices">
-                <label class="choice"><input type="radio" name="ucast" value="Ano, přijdu" required><span>Ano, přijdu</span></label>
+                <label class="choice"><input type="radio" name="ucast" value="Ano, přijedu" required><span>Ano, přijedu</span></label>
                 <label class="choice"><input type="radio" name="ucast" value="Bohužel nemůžu"><span>Bohužel nemůžu</span></label>
               </div>
             </fieldset>
 
             <div data-attending>
               <fieldset class="field">
-                <legend>Chcete odvézt na místo obřadu? <span class="opt">(z ubytování v okolí statku)</span></legend>
+                <legend>Chceš odvézt na místo obřadu? <span class="opt">(z ubytování v okolí statku)</span></legend>
                 <div class="choices">
                   <label class="choice"><input type="radio" name="odvoz_tam" value="Ano"><span>Ano</span></label>
                   <label class="choice"><input type="radio" name="odvoz_tam" value="Ne"><span>Ne</span></label>
@@ -342,7 +344,7 @@
               </fieldset>
 
               <fieldset class="field">
-                <legend>Chcete odvézt na ubytování? <span class="opt">(po oslavě ze statku na ubytování v okolí – odvoz až domů bohužel nezajišťujeme)</span></legend>
+                <legend>Chceš odvézt na ubytování? <span class="opt">(po oslavě ze statku na ubytování v okolí – odvoz až domů bohužel nezajišťujeme)</span></legend>
                 <div class="choices">
                   <label class="choice"><input type="radio" name="odvoz_zpet" value="Ano"><span>Ano</span></label>
                   <label class="choice"><input type="radio" name="odvoz_zpet" value="Ne"><span>Ne</span></label>
@@ -352,7 +354,7 @@
 
             <div class="field">
               <label for="f-vzkaz">Vzkaz pro nás <span class="opt">(nepovinné)</span></label>
-              <textarea id="f-vzkaz" name="vzkaz" rows="4" placeholder="Např. vegetariánská nebo veganská strava, alergie…"></textarea>
+              <textarea id="f-vzkaz" name="vzkaz" rows="4" placeholder="Místo pro tajné vzkazy – nejoriginálnější bude odměněn."></textarea>
             </div>
 
             <p class="form-error" data-rsvp-error role="alert" hidden></p>
@@ -362,7 +364,7 @@
           <div class="rsvp-done" data-rsvp-success tabindex="-1" hidden aria-live="polite">
             <svg class="rsvp-done__icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="32" cy="32" r="30"/><path d="M20 33l8 8 16-17"/></svg>
             <p class="rsvp-done__title" data-success-title>Díky, máme to!</p>
-            <p data-success-text>Moc se na vás těšíme.</p>
+            <p data-success-text>Moc se na tebe těšíme.</p>
           </div>
         </div>
       </div>
@@ -429,7 +431,7 @@
       <img class="bouquet faq__bouquet" src="assets/img/kvetiny.webp" alt="" aria-hidden="true" loading="lazy">
       <div class="wrap">
         <div class="faq__head reveal">
-          <h2 style="margin:0"><img class="script-title" src="assets/svg/dotazy.svg" alt="Časté dotazy"></h2>
+          <h2 style="margin:0"><img class="script-title script-title--dotazy" src="assets/svg/dotazy.svg" alt="Časté dotazy"></h2>
         </div>
         <div class="faq__list reveal d1">
           <details>
@@ -481,6 +483,6 @@
     const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 40);
     addEventListener('scroll', onScroll, { passive: true }); onScroll();
   </script>
-  <script src="assets/js/main.js?v=2" defer></script>
+  <script src="assets/js/main.js?v=3" defer></script>
 </body>
 </html>

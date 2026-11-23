@@ -138,7 +138,7 @@
     } catch (err) {
       console.error(err);
       if (errorBox) {
-        errorBox.textContent = 'Jejda, odeslání se nepovedlo. Zkuste to prosím za chvilku znovu, případně nám napište.';
+        errorBox.textContent = 'Jejda, odeslání se nepovedlo. Zkus to prosím za chvilku znovu, případně nám napiš.';
         errorBox.hidden = false;
       }
       submitBtn.disabled = false;
@@ -152,8 +152,8 @@
     const t = success.querySelector('[data-success-title]');
     const p = success.querySelector('[data-success-text]');
     if (declined) {
-      if (t) t.textContent = 'Díky, že jste nám dali vědět.';
-      if (p) p.textContent = 'Budete nám chybět – připijeme si i na vás.';
+      if (t) t.textContent = 'Díky, že nám dáváš vědět.';
+      if (p) p.textContent = 'Budeš nám chybět – připijeme si i na tebe.';
     }
     form.hidden = true;
     success.hidden = false;
