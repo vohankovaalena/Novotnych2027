@@ -5,12 +5,9 @@ Jednostránkový statický web pro GitHub Pages. RSVP formulář přes [Web3Form
 ## Struktura
 
 ```
-index.html          rozcestník se 3 návrhy (živé náhledy) – posílá se snoubencům k výběru
-navrh-1/index.html  „Luční kvítí"   – navazuje na tištěné oznámení (akvarel, krémová)
-navrh-2/index.html  „Statek"        – fotky v hlavní roli, cihlové/terakotové tóny
-navrh-3/index.html  „Modrobílý pruh"– editoriální styl, námořnická modrá + krémová
+index.html          celý web (vybraný návrh „Luční kvítí" – akvarel z oznámení, krémová)
 assets/js/main.js   sdílený skript: RSVP formulář, odpočet, animace
-assets/svg/         ozdobné nadpisy (marie-a-ondrej, rsvp, dotazy) v barvách: tmavá / -light / -navy
+assets/svg/         ozdobné nadpisy (marie-a-ondrej, rsvp, dotazy)
 assets/img/         fotky (fotoXX.jpg = 1200 px, fotoXX-s.jpg = 640 px), kvetiny.webp (akvarel z oznámení), og.jpg
 _email/             původní podklady z e-mailu – NENÍ v gitu (.gitignore)
 ```
@@ -40,14 +37,11 @@ git push -u origin main
 ```
 
 Na GitHubu: **Settings → Pages → Build and deployment → Deploy from a branch → `main` / `(root)`**.
-Za minutu běží na `https://<uzivatel>.github.io/<repo>/` (rozcestník) a `…/navrh-1/` atd.
+Za minutu běží na `https://<uzivatel>.github.io/<repo>/`.
 
-## 3. Po výběru návrhu
+## 3. Před spuštěním
 
-1. Zkopírujte vybraný `navrh-X/index.html` do kořenového `index.html` (přepíše rozcestník).
-2. V něm nahraďte `../assets/` → `assets/`.
-3. Smažte složky `navrh-1/ navrh-2/ navrh-3/`.
-4. Do `og:image` dejte absolutní URL (např. `https://novotnych2027.cz/assets/img/og.jpg`), aby se při sdílení ukázal náhled.
+- Do `og:image` dejte absolutní URL (např. `https://novotnych2027.cz/assets/img/og.jpg`), aby se při sdílení ukázal náhled.
 
 ## 4. Vlastní doména Novotnych2027.cz
 
@@ -61,4 +55,4 @@ Za minutu běží na `https://<uzivatel>.github.io/<repo>/` (rozcestník) a `…
 
 - Tipy na ubytování (FAQ „Dá se tam přespat?" – teď je tam „(odkazy doplníme)").
 - Podrobnosti o odjezdech odvozu.
-- Lokální náhled: `python -m http.server 8765` a otevřít <http://localhost:8765>.
+- Lokální náhled: `python3 -m http.server 8000` a otevřít <http://localhost:8000>.

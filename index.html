@@ -3,99 +3,409 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Návrhy svatebního webu · Marie a Ondřej</title>
-  <meta name="robots" content="noindex">
+  <title>Marie a Ondřej · 29. 5. 2027</title>
+  <meta name="description" content="Budeme se brát a moc rádi vás u toho uvidíme. 29. 5. 2027 v 11:30, Chefparade Statek Sukorady.">
+  <meta property="og:title" content="Marie a Ondřej · 29. 5. 2027">
+  <meta property="og:description" content="Budeme se brát a moc rádi vás u toho uvidíme.">
+  <meta property="og:image" content="assets/img/og.jpg">
   <meta name="theme-color" content="#f9f8f4">
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f9f8f4' stroke='%23393131' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' text-anchor='middle' fill='%23393131'%3EM%26amp;O%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root { --bg: #f9f8f4; --ink: #393131; --muted: #776e6a; --line: #e6e0d7; }
+    :root {
+      --bg: #f9f8f4;
+      --paper: #ffffff;
+      --ink: #393131;
+      --muted: #756c68;
+      --line: #e6e0d7;
+      --sage: #7f8f66;
+      --sage-soft: #e9ede1;
+      --rose: #d48b8f;
+      --lilac: #9a8fc9;
+      --radius: 14px;
+    }
     *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font: 300 16px/1.7 'Montserrat', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-    img { display: block; max-width: 100%; }
-    .wrap { width: min(1240px, 100% - 32px); margin-inline: auto; }
-    header { text-align: center; padding: clamp(48px, 8vw, 96px) 0 clamp(32px, 5vw, 56px); position: relative; overflow: hidden; }
-    header .flowers { position: absolute; width: 300px; right: -60px; top: -40px; opacity: .35; pointer-events: none; }
-    header .names { width: min(300px, 70vw); height: auto; margin: 0 auto 18px; }
-    .eyebrow { font-size: .74rem; letter-spacing: .3em; text-transform: uppercase; font-weight: 500; color: var(--muted); margin: 0 0 10px; }
-    h1 { font-weight: 400; font-size: clamp(1.4rem, 3vw, 2rem); margin: 0 0 10px; }
-    header p.lead { max-width: 56ch; margin: 0 auto; color: var(--muted); }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+    .eyebrow {
+      font-size: .78rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 400; color: var(--muted);
+    }
+    .script-title { width: auto; height: clamp(84px, 14vw, 130px); margin: 0 auto 8px; }
 
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.5vw, 32px); padding-bottom: 72px; }
-    .card { display: flex; flex-direction: column; background: #fff; border-radius: 20px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 24px 60px -40px rgba(57,49,49,.55); transition: transform .3s, box-shadow .3s; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 34px 70px -40px rgba(57,49,49,.7); }
-    .preview { position: relative; aspect-ratio: 10 / 13; overflow: hidden; background: var(--line); border-bottom: 1px solid var(--line); }
-    .preview iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 1664px; border: 0; transform-origin: 0 0; pointer-events: none; }
-    .info { padding: 22px 24px 26px; display: grid; gap: 10px; flex: 1; }
-    .num { font-size: .7rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
-    .info h2 { margin: 0; font-weight: 500; font-size: 1.25rem; }
-    .info p { margin: 0; color: var(--muted); font-size: .94rem; }
-    .swatches { display: flex; gap: 6px; margin-top: 4px; }
-    .swatches i { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
-    .open { margin-top: auto; padding-top: 10px; font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; display: flex; align-items: center; gap: 10px; }
-    .open::after { content: '→'; transition: transform .25s; letter-spacing: 0; }
-    .card:hover .open::after { transform: translateX(5px); }
-    footer { text-align: center; padding: 0 0 56px; color: var(--muted); font-size: .9rem; }
+    /* ---------- Navigace ---------- */
+    .nav {
+      position: fixed; inset: 0 0 auto 0; z-index: 20;
+      display: flex; justify-content: center; gap: 28px;
+      padding: 16px 20px;
+      font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; font-weight: 400;
+      transition: background .3s, box-shadow .3s;
+    }
+    .nav a { text-decoration: none; opacity: .8; }
+    .nav a:hover { opacity: 1; }
+    .nav.is-scrolled { background: rgba(249, 248, 244, .92); backdrop-filter: blur(8px); box-shadow: 0 1px 0 var(--line); }
 
-    @media (max-width: 960px) { .grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } header .flowers { width: 200px; } }
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative; min-height: 100svh;
+      display: grid; align-items: center;
+      padding: 96px 0 72px;
+      overflow: hidden;
+    }
+    .hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+    .hero__photo {
+      margin: 0; justify-self: end; width: min(100%, 460px, 54svh); aspect-ratio: 3 / 4;
+      border-radius: 999px 999px 22px 22px; overflow: hidden;
+      box-shadow: 0 40px 80px -46px rgba(57, 49, 49, .6);
+    }
+    .hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+    .hero h1 { margin: 0; }
+    .hero__names { width: min(500px, 86vw, 58svh); height: auto; margin-left: -1.5%; }
+    .hero__lead { font-size: clamp(1.05rem, 2.2vw, 1.3rem); margin: 22px 0 18px; max-width: 30ch; }
+    .hero__date { font-size: clamp(1.4rem, 3.4vw, 2rem); font-weight: 400; letter-spacing: .06em; margin: 0; }
+    .hero__place { margin: 6px 0 36px; font-size: clamp(.85rem, 1.8vw, 1.05rem); letter-spacing: .14em; text-transform: uppercase; }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 15px 34px; border-radius: 999px;
+      background: var(--ink); color: var(--bg); border: 1px solid var(--ink);
+      font: 500 .8rem/1 'Montserrat', sans-serif; letter-spacing: .2em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer;
+      transition: background .25s, color .25s, transform .25s;
+    }
+    .btn:hover { background: transparent; color: var(--ink); transform: translateY(-1px); }
+    .btn:disabled { opacity: .6; cursor: wait; }
+    .link {
+      font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 400;
+      text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 3px;
+    }
+    .scroll-hint {
+      position: absolute; left: 50%; bottom: 22px; translate: -50% 0;
+      width: 1px; height: 46px; background: linear-gradient(var(--ink), transparent); opacity: .5;
+    }
+
+    /* ---------- Odpočet + fotky ---------- */
+    .story { padding: clamp(64px, 10vw, 120px) 0; text-align: center; }
+    .countdown { display: flex; justify-content: center; gap: clamp(18px, 5vw, 56px); margin: 18px 0 0; }
+    .countdown div { min-width: 64px; }
+    .countdown b { display: block; font-weight: 200; font-size: clamp(2.4rem, 7vw, 4.2rem); line-height: 1.1; font-variant-numeric: tabular-nums; }
+    .countdown span { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+    .arches {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 3vw, 36px);
+      margin: clamp(48px, 8vw, 90px) auto 0; max-width: 980px; align-items: start;
+    }
+    .arch {
+      margin: 0; aspect-ratio: 3 / 4.3; overflow: hidden;
+      border-radius: 999px 999px 18px 18px;
+      box-shadow: 0 20px 40px -24px rgba(57, 49, 49, .45);
+    }
+    .arch:nth-child(2) { margin-top: clamp(28px, 6vw, 70px); }
+    .arch img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+    .arch:hover img { transform: scale(1.04); }
+    .story__quote { margin: clamp(40px, 6vw, 64px) auto 0; max-width: 36ch; font-size: 1.05rem; }
+
+    /* ---------- RSVP ---------- */
+    .rsvp { padding: clamp(40px, 8vw, 100px) 0; position: relative; }
+    .card {
+      position: relative; max-width: 720px; margin-inline: auto;
+      background: var(--paper); border-radius: 28px;
+      padding: clamp(32px, 6vw, 64px) clamp(22px, 6vw, 64px);
+      box-shadow: 0 30px 80px -50px rgba(57, 49, 49, .5);
+    }
+    .card__flowers {
+      position: absolute; width: clamp(130px, 22vw, 210px); top: -60px; right: -40px;
+      transform: rotate(14deg); opacity: .5; pointer-events: none;
+    }
+    .card__flowers--b { top: auto; right: auto; bottom: -50px; left: -46px; transform: rotate(-160deg) scaleX(-1); width: clamp(100px, 16vw, 150px); opacity: .4; }
+
+    /* bledá kytice jako na pozvánce */
+    .bouquet { position: absolute; z-index: 0; height: auto; opacity: .3; pointer-events: none; user-select: none; }
+    /* desktop: kytice vyrůstá z pravého horního rohu (stonky v rohu), aby nepřekrývala jména */
+    .hero__bouquet { width: min(620px, 42vw); right: max(-200px, -13vw); top: max(-250px, -17vw); transform: rotate(-135deg); }
+    .faq__bouquet { width: min(500px, 40vw); right: -90px; bottom: 0; }
+    .faq { position: relative; overflow: hidden; }
+    .faq > .wrap { position: relative; z-index: 1; }
+    .rsvp__head { text-align: center; margin-bottom: 36px; }
+    .rsvp__head p { margin: 0; }
+
+    .rsvp-form { display: grid; gap: 22px; }
+    .field { display: grid; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
+    .field > label, .field > legend {
+      font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; padding: 0; margin-bottom: 8px;
+    }
+    .req { color: var(--rose); }
+    .opt { text-transform: none; letter-spacing: 0; font-weight: 300; color: var(--muted); }
+    input[type="text"], select, textarea {
+      width: 100%; font: 400 1rem/1.4 'Montserrat', sans-serif; color: var(--ink);
+      background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
+      padding: 14px 16px; transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+    textarea { resize: vertical; min-height: 110px; }
+    input::placeholder, textarea::placeholder { color: #a69d98; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--sage); background: #fff; box-shadow: 0 0 0 4px var(--sage-soft); }
+    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23393131' stroke-width='1.4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+    .choices { display: flex; flex-wrap: wrap; gap: 10px; }
+    .choice { position: relative; cursor: pointer; }
+    .choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+    .choice span {
+      display: inline-block; padding: 11px 20px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--bg); font-size: .92rem; font-weight: 400;
+      transition: all .2s;
+    }
+    .choice:hover span { border-color: var(--sage); }
+    .choice input:checked + span { background: var(--sage); border-color: var(--sage); color: #fff; }
+    .choice input:focus-visible + span { box-shadow: 0 0 0 4px var(--sage-soft); }
+    [data-attending] { display: grid; gap: 22px; }
+    [data-attending][hidden], [data-guest-names][hidden] { display: none; }
+    [data-guest-names] { display: grid; gap: 14px; padding: 18px; border-radius: 14px; background: var(--sage-soft); }
+    .field--guest label { font-size: .8rem; font-weight: 400; }
+    .hp { position: absolute; left: -9999px; }
+    .form-error { margin: 0; color: #a3423f; font-size: .92rem; }
+    .rsvp-form .btn { justify-self: center; margin-top: 6px; min-width: 220px; }
+    .rsvp-done { text-align: center; padding: 20px 0; outline: none; }
+    .rsvp-done__icon { width: 64px; height: 64px; margin: 0 auto 18px; color: var(--sage); }
+    .rsvp-done__title { font-size: 1.5rem; font-weight: 400; margin: 0 0 6px; }
+    .rsvp-done p { margin: 0; }
+
+    /* ---------- FAQ ---------- */
+    .faq { padding: clamp(64px, 10vw, 120px) 0; }
+    .faq__head { text-align: center; margin-bottom: 40px; }
+    .faq__list { max-width: 780px; margin-inline: auto; border-top: 1px solid var(--line); }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary {
+      list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      padding: 22px 4px; font-weight: 500; font-size: 1.02rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: ''; flex: none; width: 14px; height: 14px;
+      background: linear-gradient(var(--ink), var(--ink)) center/100% 1.4px no-repeat,
+                  linear-gradient(var(--ink), var(--ink)) center/1.4px 100% no-repeat;
+      transition: transform .3s;
+    }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq summary:hover { color: var(--sage); }
+    .faq .a { padding: 0 4px 24px; color: var(--muted); max-width: 64ch; }
+    .faq .a p { margin: 0 0 10px; }
+    .faq .a em { color: var(--ink); }
+    @supports (interpolate-size: allow-keywords) {
+      .faq details { interpolate-size: allow-keywords; }
+      .faq details::details-content { height: 0; overflow: clip; transition: height .35s ease, content-visibility .35s allow-discrete; }
+      .faq details[open]::details-content { height: auto; }
+    }
+
+    /* ---------- Patička ---------- */
+    .footer { position: relative; padding: 80px 0 60px; text-align: center; overflow: hidden; }
+    .footer__names { width: 220px; height: auto; margin: 0 auto 14px; }
+    .footer p { margin: 4px 0; }
+    .footer small { display: block; margin-top: 22px; color: var(--muted); letter-spacing: .14em; }
+
+    /* ---------- Reveal ---------- */
+    .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 1s ease, transform 1s ease; }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+    .js .reveal.d1 { transition-delay: .12s; } .js .reveal.d2 { transition-delay: .24s; } .js .reveal.d3 { transition-delay: .36s; }
+
+    @media (max-width: 720px) {
+      .nav { gap: 18px; font-size: .64rem; letter-spacing: .18em; }
+      .hero { padding: 72px 0 96px; }
+      .hero__inner { grid-template-columns: 1fr; gap: 28px; }
+      .hero__photo { order: -1; justify-self: stretch; width: 100%; aspect-ratio: auto; height: 46svh; border-radius: 999px 999px 18px 18px; }
+      .arches { grid-template-columns: 1fr 1fr; }
+      .arch:nth-child(3) { display: none; }
+      .card__flowers { right: -14px; top: -54px; }
+      .card__flowers--b { display: none; }
+      /* mobil: kytice zůstává dole, jen výrazně ztlumená kvůli čitelnosti */
+      .hero__bouquet { width: 100vw; top: auto; right: -30vw; bottom: -4%; transform: none; opacity: .12; filter: saturate(.5); }
+      .faq__bouquet { width: 70vw; right: -26vw; bottom: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img class="flowers" src="assets/img/kvetiny-s.webp" alt="" aria-hidden="true">
-    <div class="wrap">
-      <img class="names" src="assets/svg/marie-a-ondrej.svg" alt="Marie a Ondřej">
-      <p class="eyebrow">Návrhy svatebního webu</p>
-      <h1>Který se vám líbí nejvíc?</h1>
-      <p class="lead">Všechny tři mají stejný obsah – úvod, potvrzení účasti a časté dotazy. Liší se jen vzhledem. Klikněte na návrh a projděte si ho, klidně i na mobilu. Formulář si můžete vyzkoušet, zatím nic neodesílá.</p>
+
+  <nav class="nav" aria-label="Hlavní navigace">
+    <a href="#uvod">Úvod</a>
+    <a href="#rsvp">Potvrzení účasti</a>
+    <a href="#dotazy">Dotazy</a>
+  </nav>
+
+  <!-- ============ ÚVOD ============ -->
+  <header class="hero" id="uvod">
+    <img class="bouquet hero__bouquet" src="assets/img/kvetiny.webp" alt="" aria-hidden="true">
+    <div class="wrap hero__inner">
+      <div>
+      <h1 class="reveal"><img class="hero__names" src="assets/svg/marie-a-ondrej.svg" alt="Marie a Ondřej"></h1>
+      <p class="hero__lead reveal d1">Budeme se brát a moc rádi vás u toho uvidíme.</p>
+      <p class="hero__date reveal d2">29.&nbsp;5.&nbsp;2027 v 11:30</p>
+      <p class="hero__place reveal d2">Chefparade Statek Sukorady</p>
+      <div class="hero__actions reveal d3">
+        <a class="btn" href="#rsvp">Potvrdit účast</a>
+        <a class="link" href="https://www.google.com/maps/search/?api=1&query=Chefparade+Statek+Sukorady" target="_blank" rel="noopener">Ukázat na mapě</a>
+      </div>
+      </div>
+      <figure class="hero__photo reveal d1"><img src="assets/img/foto02.jpg" alt="Marie a Ondřej u cihlové zdi" fetchpriority="high"></figure>
     </div>
+    <span class="scroll-hint" aria-hidden="true"></span>
   </header>
 
-  <main class="wrap grid">
-    <a class="card" href="navrh-1/index.html">
-      <div class="preview"><iframe src="navrh-1/index.html?nahled" scrolling="no" title="Náhled návrhu 1" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
-      <div class="info">
-        <span class="num">Návrh 1</span>
-        <h2>Luční kvítí</h2>
-        <p>Navazuje přímo na tištěné oznámení – krémový papír, jemná písmena a fotky v obloukových rámech. Klidný a romantický.</p>
-        <div class="swatches"><i style="background:#f9f8f4"></i><i style="background:#393131"></i><i style="background:#7f8f66"></i><i style="background:#d48b8f"></i><i style="background:#9a8fc9"></i></div>
-        <span class="open">Otevřít návrh</span>
+  <main>
+    <!-- ============ ODPOČET + FOTKY ============ -->
+    <section class="story">
+      <div class="wrap">
+        <p class="eyebrow reveal">Do našeho velkého dne zbývá</p>
+        <div class="countdown reveal d1" data-countdown>
+          <div><b data-d>–</b><span data-d-label>dní</span></div>
+          <div><b data-h>–</b><span data-h-label>hodin</span></div>
+          <div><b data-m>–</b><span data-m-label>minut</span></div>
+        </div>
+        <div class="arches">
+          <figure class="arch reveal"><img src="assets/img/foto04-s.jpg" alt="Marie a Ondřej se dívají skrz kulatý otvor" loading="lazy" style="object-position:50% 40%"></figure>
+          <figure class="arch reveal d1"><img src="assets/img/foto05-s.jpg" alt="Polibek u staré zdi" loading="lazy"></figure>
+          <figure class="arch reveal d2"><img src="assets/img/foto09-s.jpg" alt="Marie a Ondřej pod točitým schodištěm" loading="lazy"></figure>
+        </div>
+        <p class="story__quote reveal">Těšíme se, až tenhle den oslavíme s&nbsp;lidmi, které máme nejraději – s&nbsp;vámi.</p>
       </div>
-    </a>
-    <a class="card" href="navrh-2/index.html">
-      <div class="preview"><iframe src="navrh-2/index.html?nahled" scrolling="no" title="Náhled návrhu 2" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
-      <div class="info">
-        <span class="num">Návrh 2</span>
-        <h2>Statek</h2>
-        <p>Vaše fotky v hlavní roli, teplé cihlové a terakotové barvy a motiv kruhu z fotky „skrz tunel". Hřejivý a osobní.</p>
-        <div class="swatches"><i style="background:#f4ede4"></i><i style="background:#2f2420"></i><i style="background:#b4532a"></i><i style="background:#5f6b3d"></i></div>
-        <span class="open">Otevřít návrh</span>
+    </section>
+
+    <!-- ============ RSVP ============ -->
+    <section class="rsvp" id="rsvp">
+      <div class="wrap">
+        <div class="card reveal">
+          <img class="card__flowers" src="assets/img/kvetiny-s.webp" alt="" aria-hidden="true">
+          <img class="card__flowers card__flowers--b" src="assets/img/kvetiny-s.webp" alt="" aria-hidden="true">
+          <div class="rsvp__head">
+            <h2 style="margin:0"><img class="script-title" src="assets/svg/rsvp.svg" alt="RSVP – potvrzení účasti"></h2>
+            <p class="eyebrow">Potvrzení účasti</p>
+            <p style="margin-top:14px">Prosíme, potvrďte svou účast do <strong style="font-weight:500">28.&nbsp;2.&nbsp;2027</strong>.</p>
+          </div>
+
+          <form id="rsvp-form" class="rsvp-form">
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="field">
+              <label for="f-jmeno">Jméno a příjmení <span class="req">*</span></label>
+              <input id="f-jmeno" name="jmeno" type="text" autocomplete="name" required>
+            </div>
+
+            <fieldset class="field">
+              <legend>Přijdete? <span class="req">*</span></legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="ucast" value="Ano, přijdu" required><span>Ano, přijdu</span></label>
+                <label class="choice"><input type="radio" name="ucast" value="Bohužel nemůžu"><span>Bohužel nemůžu</span></label>
+              </div>
+            </fieldset>
+
+            <div data-attending>
+              <div class="field">
+                <label for="f-pocet">Počet osob <span class="opt">(včetně vás)</span></label>
+                <select id="f-pocet" name="pocet_osob"></select>
+              </div>
+              <div data-guest-names hidden></div>
+
+              <fieldset class="field">
+                <legend>Využijete odvoz?</legend>
+                <div class="choices">
+                  <label class="choice"><input type="radio" name="odvoz" value="Ano, tam i zpět"><span>Ano, tam i zpět</span></label>
+                  <label class="choice"><input type="radio" name="odvoz" value="Jen tam"><span>Jen tam</span></label>
+                  <label class="choice"><input type="radio" name="odvoz" value="Jen zpět"><span>Jen zpět</span></label>
+                  <label class="choice"><input type="radio" name="odvoz" value="Ne"><span>Ne</span></label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="field">
+              <label for="f-vzkaz">Vzkaz pro nás <span class="opt">(nepovinné)</span></label>
+              <textarea id="f-vzkaz" name="vzkaz" rows="4" placeholder="Např. vegetariánská nebo veganská strava, alergie…"></textarea>
+            </div>
+
+            <p class="form-error" data-rsvp-error role="alert" hidden></p>
+            <button class="btn" type="submit">Odeslat</button>
+          </form>
+
+          <div class="rsvp-done" data-rsvp-success tabindex="-1" hidden aria-live="polite">
+            <svg class="rsvp-done__icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="32" cy="32" r="30"/><path d="M20 33l8 8 16-17"/></svg>
+            <p class="rsvp-done__title" data-success-title>Díky, máme to!</p>
+            <p data-success-text>Moc se na vás těšíme.</p>
+          </div>
+        </div>
       </div>
-    </a>
-    <a class="card" href="navrh-3/index.html">
-      <div class="preview"><iframe src="navrh-3/index.html?nahled" scrolling="no" title="Náhled návrhu 3" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div>
-      <div class="info">
-        <span class="num">Návrh 3</span>
-        <h2>Modrobílý pruh</h2>
-        <p>Moderní „časopisecký" styl v námořnické modré a krémové – inspirovaný Mariiným pruhovaným svetrem. Čistý a elegantní.</p>
-        <div class="swatches"><i style="background:#f3eee4"></i><i style="background:#1f2a44"></i><i style="background:#c9a86e"></i><i style="background:repeating-linear-gradient(180deg,#1f2a44 0 4px,#f6f1e7 4px 8px)"></i></div>
-        <span class="open">Otevřít návrh</span>
+    </section>
+
+    <!-- ============ DOTAZY ============ -->
+    <section class="faq" id="dotazy">
+      <img class="bouquet faq__bouquet" src="assets/img/kvetiny.webp" alt="" aria-hidden="true" loading="lazy">
+      <div class="wrap">
+        <div class="faq__head reveal">
+          <h2 style="margin:0"><img class="script-title" src="assets/svg/dotazy.svg" alt="Časté dotazy"></h2>
+        </div>
+        <div class="faq__list reveal d1">
+          <details>
+            <summary>Počítáte se mnou na celý den?</summary>
+            <div class="a"><p>Ano, se všemi počítáme na oběd i na večerní raut.</p></div>
+          </details>
+          <details>
+            <summary>Jsem vegetarián/vegan. Co mám dělat?</summary>
+            <div class="a"><p>Napište nám to prosím do vzkazu ve <a href="#rsvp">formuláři</a>, ať pro vás máme dobré jídlo.</p></div>
+          </details>
+          <details>
+            <summary>Dá se tam zaparkovat?</summary>
+            <div class="a"><p>Míst na parkování je na statku jen málo. Proto zajišťujeme odvoz tam i zpátky, podrobnosti o odjezdech doplníme.</p></div>
+          </details>
+          <details>
+            <summary>Dá se tam přespat?</summary>
+            <div class="a"><p>Přímo na statku bohužel ne. Odvoz zpátky zajistíme. Pokud chcete zůstat v okolí, tady je pár tipů na ubytování: <em>(odkazy doplníme)</em></p></div>
+          </details>
+          <details>
+            <summary>Co si mám obléct?</summary>
+            <div class="a"><p>Na obřad ideálně obleky a šaty – jen prosíme, ne bílé. Slavnostní uniformy jsou vítány. Potom se klidně převlékněte do čehokoliv, v čem vám bude pohodlně.</p></div>
+          </details>
+          <details>
+            <summary>Můžu vzít děti?</summary>
+            <div class="a"><p>Svatbu jsme se rozhodli pojmout jako oslavu pro dospělé. Úplně malá miminka samozřejmě vezměte s sebou, ale pro větší děti bohužel nemáme prostor – nebude pro ně místo u stolu ani program. Věříme, že to pochopíte, a těšíme se, až si s vámi užijeme den bez starostí.</p></div>
+          </details>
+          <details>
+            <summary>Co bude k pití?</summary>
+            <div class="a"><p>Pivo, víno, bublinky, gin tonic, aperol, vodka, pálenka a rum. Máte oblíbené pití, které tu chybí? Klidně si ho přivezte. Lahev můžete nechat na baru u obsluhy, nebo si s ní naložit, jak budete chtít.</p></div>
+          </details>
+          <details>
+            <summary>Co vám můžeme dát jako dar?</summary>
+            <div class="a"><p>Největším darem je pro nás to, že s námi tento den oslavíte. Pokud byste nás přesto chtěli obdarovat, nejvíc nám pomůže příspěvek do obálky na náš společný začátek.</p></div>
+          </details>
+        </div>
       </div>
-    </a>
+    </section>
   </main>
 
-  <footer>Napište nám číslo návrhu, který vyhrál – a případně co byste na něm chtěli změnit.</footer>
+  <footer class="footer">
+    <img class="footer__names" src="assets/svg/marie-a-ondrej.svg" alt="Marie a Ondřej">
+    <p class="eyebrow">29.&nbsp;5.&nbsp;2027 · Chefparade Statek Sukorady</p>
+    <small>Novotnych2027.cz</small>
+  </footer>
 
   <script>
-    // zmenšení živých náhledů na šířku karty
-    const fit = () => document.querySelectorAll('.preview').forEach((p) => {
-      const f = p.querySelector('iframe');
-      f.style.transform = `scale(${p.clientWidth / 1280})`;
-    });
-    addEventListener('resize', fit); fit();
+    // průhledná navigace -> s pozadím po odscrollování
+    const nav = document.querySelector('.nav');
+    const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 40);
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
   </script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
