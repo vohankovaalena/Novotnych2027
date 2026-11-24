@@ -12,7 +12,7 @@
    * na který mají chodit odpovědi). Dokud je zde výchozí text, formulář
    * běží v DEMO režimu: nic neodesílá, jen ukáže poděkování.
    * ------------------------------------------------------------------ */
-  const WEB3FORMS_ACCESS_KEY = 'VLOZTE_SEM_WEB3FORMS_ACCESS_KEY';
+  const WEB3FORMS_ACCESS_KEY = 'faf49d86-4771-459a-ab0a-72539cf129b8';
   const WEDDING_DATE = '2027-05-29T11:30:00+02:00';
 
   const DEMO = !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(WEB3FORMS_ACCESS_KEY);
