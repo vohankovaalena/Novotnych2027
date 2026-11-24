@@ -99,10 +99,6 @@
       font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 400;
       text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 3px;
     }
-    .scroll-hint {
-      position: absolute; left: 50%; bottom: 22px; translate: -50% 0;
-      width: 1px; height: 46px; background: linear-gradient(var(--ink), transparent); opacity: .5;
-    }
 
     /* ---------- Odpočet + fotky ---------- */
     .story { padding: clamp(64px, 10vw, 120px) 0; text-align: center; }
@@ -286,7 +282,6 @@
       </div>
       <figure class="hero__photo reveal d1"><img src="assets/img/foto02.jpg" alt="Marie a Ondřej u cihlové zdi" fetchpriority="high"></figure>
     </div>
-    <span class="scroll-hint" aria-hidden="true"></span>
   </header>
 
   <main>
@@ -345,7 +340,7 @@
               </fieldset>
 
               <fieldset class="field">
-                <legend>Chceš odvézt na ubytování? <span class="opt">(po oslavě ze statku na ubytování v okolí – odvoz až domů bohužel nezajišťujeme)</span></legend>
+                <legend>Chceš odvézt na ubytování? <span class="opt">(po oslavě ze statku na ubytování v okolí, odvoz až domů bohužel nezajišťujeme)</span></legend>
                 <div class="choices">
                   <label class="choice"><input type="radio" name="odvoz_zpet" value="Ano"><span>Ano</span></label>
                   <label class="choice"><input type="radio" name="odvoz_zpet" value="Ne"><span>Ne</span></label>
