@@ -105,7 +105,7 @@
 
     const payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
-      subject: `RSVP: ${name} – ${attending}`,
+      subject: 'Novotných 2027 - Odpověď z formuláře',
       from_name: 'Svatební web Marie & Ondřej',
       'Jméno a příjmení': name,
       'Přijde?': attending,

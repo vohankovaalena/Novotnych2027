@@ -22,7 +22,7 @@ _email/             původní podklady z e-mailu – NENÍ v gitu (.gitignore)
 3. Dokud tam je výchozí text, formulář běží v **demo režimu** – nic neodesílá, jen ukáže poděkování
    (data vypíše do konzole prohlížeče). Ideální pro ukázku návrhů.
 
-Každá odpověď přijde jako e-mail s předmětem `RSVP: Jméno – Ano, přijedu` a poli:
+Každá odpověď přijde jako e-mail s předmětem `Novotných 2027 - Odpověď z formuláře` a poli:
 jméno, účast, odvoz na obřad (z ubytování), odvoz na ubytování (po oslavě), vzkaz. Free plán Web3Forms = 250 odeslání/měsíc.
 
 ## 2. GitHub Pages
